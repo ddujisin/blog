@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: blog_app
+  password: BL0gDBus3r
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+ <<: *default
+ database: blog_development
+
+test:
+ <<: *default
+ database: blog_test
+
+production:
+ <<: *default
+ database: blog_production 
